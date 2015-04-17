@@ -21,7 +21,7 @@ Features:
 Add SGKBarcodeBundle by running the command:
 
 ```sh
-$ php composer.phar require sgk/barcode-bundle: dev-master
+$ php composer.phar require sgk/barcode-bundle:dev-master
 ```
 Composer will install the bundle to your project's vendor/sgk directory.
 
