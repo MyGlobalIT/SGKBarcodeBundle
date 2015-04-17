@@ -1,6 +1,8 @@
 # SGKBarcodeBundle
 
-SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want!
+SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want! this README is also available in French and Chinese.
+
+![SGKBarcodeBundle](Resource/doc/barcode.png)
 
 Features:
 
@@ -46,11 +48,14 @@ To generate a barcode, you have 5 options can be configured.
 |height|**integer**|optional|              |height of units|
 |color |string for html, svg / array for png|optional|[HTML Color Names](http://www.w3schools.com/html/html_colornames.asp) / array(R, G, B)|Barcode color|
 
+> Default width and height for two-dimensional are 5, 5, for one-dimensional are 2, 30.
+> Default color for html,svg is black, for png is array(0, 0, 0)
+
 ## Usage with service
   
 The bundle registers one service: ``sgk_barcode.generator`` which will allows you to generate barcode:
 
-outpout html
+* outpout html
 ```php
 $options = array(
     'code'   => 'string to encode',
@@ -64,7 +69,7 @@ $barcode =
 echo $barcode;
 ```
 
-outpout svg
+* outpout svg
 ```php
 $options = array(
     'code'   => 'string to encode',
@@ -81,7 +86,7 @@ $barcode =
 echo $barcode;
 ```
 
-outpout png
+* outpout png
 ```php
 $options = array(
     'code'   => 'string to encode',
@@ -97,7 +102,7 @@ $barcode =
     
 echo '<img src="data:image/png;base64,'.$barcode.'" />';
 ```
-note: for format png, the generator return the based64 of png file, so we use [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) to display the png in webpage.
+> For format png, the generator return the based64 of png file, so we use [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) to display the png in webpage.
 
 ## Usage in Twig template
 
@@ -105,19 +110,19 @@ This bundle extend one function of Twig ``barcode`` which you can simply use it 
 
 ``barcode`` Twig fuction use the same options as the service function before, the only diffrent is your need pass a [Twig array](http://twig.sensiolabs.org/doc/templates.html#literals) in the function.
 
-display html
+* display html
 
 ```twig
 {{ barcode({code: 'string to encode', type: 'c128', format: 'html'}) }}
 ```
 
-display svg
+* display svg
 
 ```twig
 {{ barcode({code: 'string to encode', type: 'qrcode', format: 'svg', width: 10, height: 10, color: 'green'}) }}
 ```
 
-display png
+* display png
 
 ```twig
 <img src="data:image/png;base64,
@@ -125,10 +130,58 @@ display png
 " />
 ```
 
+## Save Barcode in file
+
+coming soon
+
 ## Supported Barcode Types
 
+Please read [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) to know which type you should choice. 
+
+### 2d barcodes
+
+1. qrcode
+2. pdf417
+3. datamatrix
+
+### 1d barcodes
+
+1. c39
+2. c39+
+3. c39e
+4. c39e+
+5. c93
+6. s25
+7. s25+
+8. i25
+9. i25+
+10. c128
+11. c128a
+12. c128b
+13. c128c
+14. ean2
+15. ean5
+16. ean8
+17. ean13
+18. upca
+19. upce
+20. msi
+21. msi+
+22. postnet
+23. planet
+24. c3rms4cc
+25. kix
+26. imb
+27. codabar
+28. code11
+29. pharma
+30. pharma2t
 
 ## Requirements
 
-- Barcodes requires ImageMagick to create PNGs in PHP 5.3.
-- Barcodes requires PHP bcmath extension for Intelligent Mail barcodes
+If there is some problem of Requirements, make sure you have install these two extensions of PHP (check in your phpinfo()).
+
+- Barcodes requires [ImageMagick](http://php.net/manual/en/book.imagick.php) to create PNGs in PHP 5.3.
+- Barcodes requires [PHP bcmath](http://php.net/manual/en/book.bc.php) extension for Intelligent Mail barcodes
+
+## Tests
