@@ -68,8 +68,6 @@ class Generator
         $this->configureOptions($this->resolver);
         $options = $this->resolver->resolve($options);
 
-        var_dump($options);
-
         if (Type::getDimension($options['type']) == '2D') {
             return call_user_func_array(
                 array(

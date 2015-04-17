@@ -1,7 +1,7 @@
 {
   "name": "sgk/barcode-bundle",
   "type": "symfony-bundle",
-  "description": "Barcode Generator Bundle for Symfony2 with Twig support",
+  "description": "Symfony2 Barcode Generator Bundle with Twig function extension",
   "keywords": [
     "Symfony2",
     "Symfony",

@@ -1,40 +1,27 @@
 # SGKBarcodeBundle
 
-SGKBarcodeBundle is a Symfony version of [dinesh/barcode](https://github.com/dineshrabara/barcode) .
+SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want!
 
-Features:
-
-1.Barcode generator for PHP supporting 20+ barcode types 
-
-2.Output three formats: HTML, PNG, or SVG canvas
-
-3.Twig integration: you can simply use a function extensional of Twig to generate Barcode
+    Features:
+    
+    1.Barcode generator for 3 two-dimensional and 30 one-dimensional types
+    
+    2.Output three formats: HTML, PNG, or SVG canvas
+    
+    3.Twig integration: you can simply use a function extensional of Twig in the template to generate Barcode
+    
+    4.Core of this bundle use this laravel project: [dinesh/barcode](https://github.com/dineshrabara/barcode)
 
 ## Installation
 
-To install this bundle please follow these steps:
-
-First, add the dependencies in your `composer.json` file:
-
-```json
-"repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/Tessi-Tms/TmsBarcodeBundle.git"
-    }
-],
-"require": {
-        "tms/barcode-bundle": "dev-master"
-    },
-```
-
-Then, install the bundle with the command:
+Add SGKBarcodeBundle by running the command:
 
 ```sh
-composer update
+$ php composer.phar require "sgk/barcode-bundle": "dev-master"
 ```
+Composer will install the bundle to your project's vendor/sgk directory.
 
-Finally, enable the bundle in your application kernel:
+Then, Enable the bundle in the kernel:
 
 ```php
 <?php
@@ -43,13 +30,13 @@ Finally, enable the bundle in your application kernel:
 public function registerBundles()
 {
     $bundles = array(
-        //
-        new Tms\Bundle\BarcodeBundle\TmsBarcodeBundle(),
+        // ...
+        new SGK\BarcodeBundle\SGKBarcodeBundle(),
     );
 }
 ```
 
-## Usage normal
+## Usage with Service container
   
 Used by service ``tms_barcode_generator``:
 ```php
@@ -64,25 +51,6 @@ if you don't want to include BarcodeType in your file, a string of type is possi
 
 ```php
 $barcode = $this->get('tms_barcode_generator')->generate("QR CODE", "This is what I want encoded");
-```
-    
-Finally, output SVG, HTML, or a PNG:
-
-```php
-$svg  = $barcode.toSVG();
-$html = $barcode.toHTML();
-$png  = $barcode.toPNG();
-```
-
-Need a custom height, width, or color for your barcode? No problem:
-
-```php
-$width = 20;
-$height = 30;
-$color = 'blue';
-$sizedSVG  = $barcode.toSVG($width, $height, $color);
-$sizedHTML = $barcode.toSVG($width, $height, $color);
-$sizedPNG  = $barcode.toSVG($width, $height, $color);
 ```
 
 ## Usage in Twig
@@ -102,23 +70,6 @@ example:
 {{ barcode2d('PDF417', participation_1.id, 3, 3, 'red') }}
 ```
 
-Attention:
-Before the two Twig functions is available in Twig environement.
-First first you need to instantiate a BarcodeGenerator:
-
-execute this before the Twig render your barcode
-```php
-new BarcodeGenerator($this->get('twig'));
-```
-or inject service ``tms_barcode_generator`` in your class, the BarcodeGenerator will be automatic instantiated
-```
-sample_service:
-        class: \sample\sevice\class
-        arguments:
-            - @other_service
-            - @tms_barcode_generator
-
-```
 ## Supported Barcode Types
 
 ```php
