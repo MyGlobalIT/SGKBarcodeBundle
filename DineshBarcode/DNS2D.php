@@ -1,5 +1,6 @@
 <?php
 
+/*
 namespace Dinesh\Barcode;
 
 use Dinesh\Barcode\QRcode;
@@ -7,6 +8,13 @@ use Dinesh\Barcode\Datamatrix;
 use Dinesh\Barcode\PDF417;
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
+*/
+
+namespace SGK\BarcodeBundle\DineshBarcode;
+
+use SGK\BarcodeBundle\DineshBarcode\QRcode;
+use SGK\BarcodeBundle\DineshBarcode\Datamatrix;
+use SGK\BarcodeBundle\DineshBarcode\PDF417;
 
 /**
  * Description of DNS2D
@@ -27,18 +35,18 @@ class DNS2D {
      */
     protected $store_path;
 
-    /**
-    * @var \Illuminate\Contracts\Config\Repository
-    */
-    protected $config;
-
-    /**
-    * @param \Illuminate\Contracts\Config\Repository $config
-    */
-    public function __construct(ConfigRepository $config){
-        $this->config = $config;
-        $this->store_path = $this->config->get('barcode.store_path');
-    }
+//    /**
+//    * @var \Illuminate\Contracts\Config\Repository
+//    */
+//    protected $config;
+//
+//    /**
+//    * @param \Illuminate\Contracts\Config\Repository $config
+//    */
+//    public function __construct(ConfigRepository $config){
+//        $this->config = $config;
+//        $this->store_path = $this->config->get('barcode.store_path');
+//    }
 
     /**
      * Return a SVG string representation of barcode.

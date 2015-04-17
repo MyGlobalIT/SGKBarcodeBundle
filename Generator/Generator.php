@@ -5,9 +5,10 @@ namespace SGK\BarcodeBundle\Generator;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
-use SGK\BarcodeBundle\Type\BarcodeType;
-use Dinesh\Barcode\DNS1D;
-use Dinesh\Barcode\DNS2D;
+
+use SGK\BarcodeBundle\Type\Type;
+use SGK\BarcodeBundle\DineshBarcode\DNS2D;
+use SGK\BarcodeBundle\DineshBarcode\DNS1D;
 
 /**
  * Class Generator
@@ -49,38 +50,33 @@ class Generator
         $this->dns2d = new DNS2D();
         $this->dns1d = new DNS1D();
         $this->resolver = new OptionsResolver();
-        $this->configureOptions($this->resolver);
     }
 
     /**
-     * @param string $code   code to print
-     * @param string $type   type of barcode
-     * @param string $format output format
-     * @param int    $width  Minimum width of a single bar in user units.
-     * @param int    $height Height of barcode in user units.
-     * @param string $color  Foreground color (in SVG format) for bar elements (background is transparent).
+     * @param array $options
+     *        string $code   code to print
+     *        string $type   type of barcode
+     *        string $format output format
+     *        int    $width  Minimum width of a single bar in user units.
+     *        int    $height Height of barcode in user units.
+     *        string $color  Foreground color (in SVG format) for bar elements (background is transparent).
      *
-     * @return DNS2D | DNS1D
+     * @return mixed
      */
-    public function generate($code, $type, $format, $width = null, $height = null, $color = null)
+    public function generate($options = array())
     {
-        $options = $this->resolver->resolve(array(
-            'code'   => $code,
-            'type'   => strtoupper($type),
-            'format' => $format,
-            'width'  => $width,
-            'height' => $height,
-            'color'  => $color,
-        ));
+        $this->configureOptions($this->resolver);
+        $options = $this->resolver->resolve($options);
 
-        unset($options['format']);
-        if (BarcodeType::getDimension($options['type']) == '2D') {
+        var_dump($options);
+
+        if (Type::getDimension($options['type']) == '2D') {
             return call_user_func_array(
                 array(
                     $this->dns2d,
                     $this->formatFunctionMap[$options['format']],
                 ),
-                $options
+                array($options['code'], $options['type'], $options['width'], $options['height'], $options['color'])
             );
         } else {
             return call_user_func_array(
@@ -88,7 +84,7 @@ class Generator
                     $this->dns1d,
                     $this->formatFunctionMap[$options['format']],
                 ),
-                $options
+                array($options['code'], $options['type'], $options['width'], $options['height'], $options['color'])
             );
         }
     }
@@ -101,6 +97,23 @@ class Generator
     protected function configureOptions(OptionsResolverInterface $resolver)
     {
         $resolver
+            ->setRequired(array(
+                'code', 'type', 'format',
+            ))
+            ->setOptional(array(
+                'width', 'height', 'color',
+            ))
+            ->setDefaults(array(
+                'width' => function (Options $options) {
+                    return Type::getDimension($options['type']) == '2D' ? 5 : 2;
+                },
+                'height' => function (Options $options) {
+                    return Type::getDimension($options['type']) == '2D' ? 5 : 30;
+                },
+                'color' => function (Options $options) {
+                    return $options['format'] == 'png' ? array(0, 0, 0) : 'black';
+                },
+            ))
             ->setAllowedTypes(array(
                 'code'   => array('string'),
                 'type'   => array('string'),
@@ -111,8 +124,8 @@ class Generator
             ))
             ->setAllowedValues(array(
                 'type'   => array_merge(
-                    BarcodeType::$oneDimensionalBarcodeType,
-                    BarcodeType::$twoDimensionalBarcodeType
+                    Type::$oneDimensionalBarcodeType,
+                    Type::$twoDimensionalBarcodeType
                 ),
                 'format' => array('html', 'png', 'svg'),
             ));

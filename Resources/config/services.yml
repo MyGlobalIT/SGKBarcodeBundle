@@ -1,4 +1,10 @@
 services:
-#    sgk_barcode.example:
-#        class: SGK\BarcodeBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    sgk_barcode.generator:
+        class: SGK\BarcodeBundle\Generator\Generator
+
+    sgk_barcode.twig.extension:
+        class: SGK\BarcodeBundle\Twig\Extensions\Barcode
+        arguments:
+            - @sgk_barcode.generator
+        tags:
+            - { name: twig.extension }

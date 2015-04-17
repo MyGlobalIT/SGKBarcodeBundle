@@ -1,10 +1,13 @@
 <?php
 
+/*
 namespace Dinesh\Barcode;
 
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
+*/
 
+namespace SGK\BarcodeBundle\DineshBarcode;
 
 /**
  * Description of DNS1D
@@ -25,18 +28,18 @@ class DNS1D {
      */
     protected $store_path;
 
-    /**
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
-
-    /**
-     * @param \Illuminate\Contracts\Config\Repository $config
-     */
-    public function __construct(ConfigRepository $config){
-        $this->config = $config;
-        $this->store_path = $this->config->get('barcode.store_path');
-    }
+//    /**
+//     * @var \Illuminate\Contracts\Config\Repository
+//     */
+//    protected $config;
+//
+//    /**
+//     * @param \Illuminate\Contracts\Config\Repository $config
+//     */
+//    public function __construct(ConfigRepository $config){
+//        $this->config = $config;
+//        $this->store_path = $this->config->get('barcode.store_path');
+//    }
 
     /**
      * Return a SVG string representation of barcode.

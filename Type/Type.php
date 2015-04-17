@@ -8,51 +8,51 @@ namespace SGK\BarcodeBundle\Type;
  *
  * @package SGK\BarcodeBundle\Type
  */
-class BarcodeType
+class Type
 {
     /**
      * @var array oneDimensionalBarcodeType
      */
     public static $oneDimensionalBarcodeType = array(
-        'C39',
-        'C39+',
-        'C39E',
-        'C39E+',
-        'C93',
-        'S25',
-        'S25+',
-        'I25',
-        'I25+',
-        'C128',
-        'C128A',
-        'C128B',
-        'C128C',
-        'EAN2',
-        'EAN5',
-        'EAN8',
-        'EAN13',
-        'UPCA',
-        'UPCE',
-        'MSI',
-        'MSI+',
-        'POSTNET',
-        'PLANET',
-        'RMS4CC',
-        'KIX',
-        'IMB',
-        'CODABAR',
-        'CODE11',
-        'PHARMA',
-        'PHARMA2T',
+        'c39',
+        'c39+',
+        'c39e',
+        'c39e+',
+        'c93',
+        's25',
+        's25+',
+        'i25',
+        'i25+',
+        'c128',
+        'c128a',
+        'c128b',
+        'c128c',
+        'ean2',
+        'ean5',
+        'ean8',
+        'ean13',
+        'upca',
+        'upce',
+        'msi',
+        'msi+',
+        'postnet',
+        'planet',
+        'rms4cc',
+        'kix',
+        'imb',
+        'codabar',
+        'code11',
+        'pharma',
+        'pharma2t',
     );
 
     /**
      * @var array twoDimensionalBarcodeType
      */
     public static $twoDimensionalBarcodeType = array(
-        'QRCODE',
-        'PDF417',
-        'DATAMATRIX',
+        'qrcode',
+        'pdf417',
+        'datamatrix',
     );
 
     /**
