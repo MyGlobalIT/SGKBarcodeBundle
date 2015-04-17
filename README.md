@@ -69,7 +69,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('tms_barcode_generator')->generate($options);
+    $this->get('sgk_barcode.generator')->generate($options);
     
 echo $barcode;
 ```
@@ -86,7 +86,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('tms_barcode_generator')->generate($options);
+    $this->get('sgk_barcode.generator')->generate($options);
     
 echo $barcode;
 ```
@@ -103,7 +103,7 @@ $options = array(
 );
 
 $barcode =
-    $this->get('tms_barcode_generator')->generate($options);
+    $this->get('sgk_barcode.generator')->generate($options);
     
 echo '<img src="data:image/png;base64,'.$barcode.'" />';
 ```
