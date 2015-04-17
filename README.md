@@ -1,5 +1,10 @@
 # SGKBarcodeBundle
 
+[![Build Status](https://travis-ci.org/shangguokan/SGKBarcodeBundle.svg)](https://travis-ci.org/shangguokan/SGKBarcodeBundle)
+[![Latest Stable Version](https://poser.pugx.org/sgk/barcode-bundle/v/stable.svg)](https://packagist.org/packages/sgk/barcode-bundle)
+[![Total Downloads](https://poser.pugx.org/sgk/barcode-bundle/downloads.svg)](https://packagist.org/packages/sgk/barcode-bundle)
+[![License](https://poser.pugx.org/sgk/barcode-bundle/license.svg)](https://packagist.org/packages/sgk/barcode-bundle)
+
 SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want! this README is also available in French and Chinese.
 
 Features:
