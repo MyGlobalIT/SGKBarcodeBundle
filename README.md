@@ -9,7 +9,7 @@ Features:
 3. Twig integration: you can simply use a function extensional of Twig in the template to generate Barcode
 4. Core of this bundle use this laravel project: [dinesh/barcode](https://github.com/dineshrabara/barcode)
 
-![SGKBarcodeBundle](Resources/doc/barcode.png =100)
+<img src="https://github.com/shangguokan/SGKBarcodeBundle/blob/master/Resources/doc/barcode.png" alt="SGKBarcodeBundle" style="width:50%;height:50%">
 
 ## Installation
 
