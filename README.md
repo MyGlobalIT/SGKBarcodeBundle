@@ -2,14 +2,14 @@
 
 SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want! this README is also available in French and Chinese.
 
-![SGKBarcodeBundle](Resources/doc/barcode.png)
-
 Features:
 
 1. Support 3 two-dimensional and 30 one-dimensional Barcode types
 2. Output three formats: HTML, PNG, or SVG canvas
 3. Twig integration: you can simply use a function extensional of Twig in the template to generate Barcode
 4. Core of this bundle use this laravel project: [dinesh/barcode](https://github.com/dineshrabara/barcode)
+
+![SGKBarcodeBundle](Resources/doc/barcode.png =100)
 
 ## Installation
 
