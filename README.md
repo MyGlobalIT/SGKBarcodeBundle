@@ -2,7 +2,7 @@
 
 SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want! this README is also available in French and Chinese.
 
-![SGKBarcodeBundle](Resource/doc/barcode.png)
+![SGKBarcodeBundle](Resources/doc/barcode.png)
 
 Features:
 
