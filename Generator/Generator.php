@@ -98,6 +98,9 @@ class Generator
             ->setRequired(array(
                 'code', 'type', 'format',
             ))
+            ->setOptional(array(
+                'width', 'height', 'color',
+            ))
             ->setDefaults(array(
                 'width' => function (Options $options) {
                     return Type::getDimension($options['type']) == '2D' ? 5 : 2;
