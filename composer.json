@@ -43,5 +43,5 @@
   "autoload": {
     "psr-4": { "SGK\\BarcodeBundle\\": "" }
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "stable"
 }
