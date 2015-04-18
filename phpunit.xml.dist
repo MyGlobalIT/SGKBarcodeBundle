@@ -9,6 +9,7 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
+         bootstrap="Tests/bootstrap.php"
          beStrictAboutTestsThatDoNotTestAnything="true"
          checkForUnintentionallyCoveredCode="true"
          beStrictAboutOutputDuringTests="true"
@@ -28,6 +29,7 @@
                 <directory>./DineshBarcode</directory>
                 <directory>./Resources</directory>
                 <directory>./Tests</directory>
+                <directory>./Twig</directory>
             </exclude>
         </whitelist>
     </filter>

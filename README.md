@@ -120,7 +120,7 @@ echo '<img src="data:image/png;base64,'.$barcode.'" />';
 
 This bundle extend one function of Twig ``barcode`` which you can simply use it to generate barcode in the twig template.
 
-``barcode`` use the same options, only different thing is your need pass a [Twig array](http://twig.sensiolabs.org/doc/templates.html#literals)(it looks really like Json, but it isn't) in the function.
+``barcode`` use the same options, only different thing is your need pass a [Twig array](http://twig.sensiolabs.org/doc/templates.html#literals) (it looks really like Json, but it isn't) in the function.
 
 * display html
 ```twig
