@@ -4,20 +4,13 @@
   "description": "Symfony2 Barcode Generator Bundle with Twig function extension",
   "keywords": [
     "Symfony2",
+    "barcode",
     "Symfony",
     "Bundle",
     "Twig",
-    "barcode",
     "generator",
-    "barcodes",
     "qrcode",
-    "qr code",
-    "PDF417",
-    "Datamatrix",
-    "CODE 39",
-    "CODE 128",
-    "EAN",
-    "CODABAR"
+    "qr code"
   ],
   "license": "MIT",
   "authors": [
