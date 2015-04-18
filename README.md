@@ -5,7 +5,8 @@
 [![Total Downloads](https://poser.pugx.org/sgk/barcode-bundle/downloads.svg)](https://packagist.org/packages/sgk/barcode-bundle)
 [![License](https://poser.pugx.org/sgk/barcode-bundle/license.svg)](https://packagist.org/packages/sgk/barcode-bundle)
 
-SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want! this README is also available in French and Chinese.
+SGKBarcodeBundle is the Symfony2 Barcode Generator Bundle which you want!
+This README is also available in French ([Français](Resources/doc/README_fr.md)) and Chinese ([中文](Resources/doc/README_zh-CN.md)).
 
 Features:
 
@@ -137,7 +138,31 @@ This bundle extend one function of Twig ``barcode`` which you can simply use it 
 
 ## Save Barcode in file
 
-coming soon
+As you can see, the Bundle save nothing in the file system, But if you want to keep the barcode, No problem!
+
+* save as html
+```png
+$savePath = '/tmp/';
+$fileName = 'sample.html';
+
+file_put_contents($savePath.$fileName, $barcode);
+```
+
+* save as svg
+```png
+$savePath = '/tmp/';
+$fileName = 'sample.svg';
+
+file_put_contents($savePath.$fileName, $barcode);
+```
+
+* save as png
+```png
+$savePath = '/tmp/';
+$fileName = 'sample.png';
+
+file_put_contents($savePath.$fileName, base64_decode($barcode));
+```
 
 ## Supported Barcode Types
 

@@ -50,6 +50,7 @@ class Generator
         $this->dns2d = new DNS2D();
         $this->dns1d = new DNS1D();
         $this->resolver = new OptionsResolver();
+        $this->configureOptions($this->resolver);
     }
 
     /**
@@ -65,7 +66,6 @@ class Generator
      */
     public function generate($options = array())
     {
-        $this->configureOptions($this->resolver);
         $options = $this->resolver->resolve($options);
 
         if (Type::getDimension($options['type']) == '2D') {
