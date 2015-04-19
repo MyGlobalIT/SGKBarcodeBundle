@@ -175,46 +175,46 @@ Please read [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) to know which
 
 ### 2d barcodes
 
-|type      |Name                                                   |Example|
-|:--------:|:-----------------------------------------------------:|:-----:|
+|type      |Name                                                   |Example(encode 123456)|
+|:--------:|:-----------------------------------------------------:|:--------------------:|
 |qrcode    |[QR code](http://en.wikipedia.org/wiki/QR_code)        |![](Resources/doc/barcode/qrcode.png)|
 |pdf417    |[PDF417](http://en.wikipedia.org/wiki/PDF417)          |![](Resources/doc/barcode/pdf417.png)|
 |datamatrix|[Data Matrix](http://en.wikipedia.org/wiki/Data_Matrix)|![](Resources/doc/barcode/datamatrix.png)|
 
 ### 1d barcodes
 
-|type    |Symbology                                              |
-|:------:|:-----------------------------------------------------:|
-|c39     |[Code 39](http://en.wikipedia.org/wiki/Code_39)        |
-|c39+    |Code 39 CHECK_DIGIT                                    |
-|c39e    |Code 39 EXTENDED                                       |
-|c39e+   |Code 39 EXTENDED CHECK_DIGIT                           |
-|c93     |[Code 93](http://en.wikipedia.org/wiki/Code_93)        |
-|s25     |[Standard 2 of 5](http://www.barcodeisland.com/2of5.phtml)           |
-|s25+    |Standard 2 of 5 CHECK_DIGIT                                          |
-|i25     |[Interleaved 2 of 5](http://en.wikipedia.org/wiki/Interleaved_2_of_5)|
-|i25+    |Interleaved 2 of 5 CHECK_DIGIT                                       |
-|c128    |[Code 128](http://en.wikipedia.org/wiki/Code_128)                    |
-|c128a   |Code 128A|
-|c128b   |Code 128B|
-|c128c   |Code 128C|
-|ean2    |[EAN 2](http://en.wikipedia.org/wiki/EAN_2)                 |
-|ean5    |[EAN 5](http://en.wikipedia.org/wiki/EAN_5)                 |
-|ean8    |[EAN 8](http://en.wikipedia.org/wiki/EAN-8)                 |
-|ean13   |[EAN 13](http://en.wikipedia.org/wiki/EAN-13)               |
-|upca    |[UPC-A](http://en.wikipedia.org/wiki/Universal_Product_Code)|
-|upce    |[UPC-B](http://en.wikipedia.org/wiki/Universal_Product_Code)|
-|msi     |[MSI](http://en.wikipedia.org/wiki/MSI_Barcode)             |
-|msi+    |MSI CHECK_DIGIT                                             |
-|postnet |[POSTNET](http://en.wikipedia.org/wiki/POSTNET)             |
-|planet  |[PLANET](http://en.wikipedia.org/wiki/Postal_Alpha_Numeric_Encoding_Technique)|
-|c3rms4cc|[RMS4CC](http://en.wikipedia.org/wiki/RM4SCC)    |
-|kix     |[KIX-code](http://nl.wikipedia.org/wiki/KIX-code)|
-|imb     |[IM barcode](http://en.wikipedia.org/wiki/Intelligent_Mail_barcode)|
-|codabar |[Codabar](http://en.wikipedia.org/wiki/Codabar)                    |
-|code11  |[Code 11](http://en.wikipedia.org/wiki/Code_11)                    |
-|pharma  |[Pharmacode](http://en.wikipedia.org/wiki/Pharmacode)              |
-|pharma2t|Pharmacode Two-Track                                               |
+|type    |Symbology                                              |Example(encode 123456)|
+|:------:|:-----------------------------------------------------:|:--------------------:|
+|c39     |[Code 39](http://en.wikipedia.org/wiki/Code_39)        |![](Resources/doc/barcode/c39.png)|
+|c39+    |Code 39 CHECK_DIGIT                                    |![](Resources/doc/barcode/c39+.png)|
+|c39e    |Code 39 EXTENDED                                       |![](Resources/doc/barcode/c39e.png)|
+|c39e+   |Code 39 EXTENDED CHECK_DIGIT                           |![](Resources/doc/barcode/c39e+.png)|
+|c93     |[Code 93](http://en.wikipedia.org/wiki/Code_93)        |![](Resources/doc/barcode/c93.png)|
+|s25     |[Standard 2 of 5](http://www.barcodeisland.com/2of5.phtml)           |![](Resources/doc/barcode/s25.png)|
+|s25+    |Standard 2 of 5 CHECK_DIGIT                                          |![](Resources/doc/barcode/s25+.png)|
+|i25     |[Interleaved 2 of 5](http://en.wikipedia.org/wiki/Interleaved_2_of_5)|![](Resources/doc/barcode/i25.png)|
+|i25+    |Interleaved 2 of 5 CHECK_DIGIT                                       |![](Resources/doc/barcode/i25+.png)|
+|c128    |[Code 128](http://en.wikipedia.org/wiki/Code_128)                    |![](Resources/doc/barcode/c128.png)|
+|c128a   |Code 128A|![](Resources/doc/barcode/c128a.png)|
+|c128b   |Code 128B|![](Resources/doc/barcode/c128b.png)|
+|c128c   |Code 128C|![](Resources/doc/barcode/c128c.png)|
+|ean2    |[EAN 2](http://en.wikipedia.org/wiki/EAN_2)                 |![](Resources/doc/barcode/ean2.png)|
+|ean5    |[EAN 5](http://en.wikipedia.org/wiki/EAN_5)                 |![](Resources/doc/barcode/ean5.png)|
+|ean8    |[EAN 8](http://en.wikipedia.org/wiki/EAN-8)                 |![](Resources/doc/barcode/ean8.png)|
+|ean13   |[EAN 13](http://en.wikipedia.org/wiki/EAN-13)               |![](Resources/doc/barcode/ean13.png)|
+|upca    |[UPC-A](http://en.wikipedia.org/wiki/Universal_Product_Code)|![](Resources/doc/barcode/upca.png)|
+|upce    |[UPC-B](http://en.wikipedia.org/wiki/Universal_Product_Code)|![](Resources/doc/barcode/upce.png)|
+|msi     |[MSI](http://en.wikipedia.org/wiki/MSI_Barcode)             |![](Resources/doc/barcode/msi.png)|
+|msi+    |MSI CHECK_DIGIT                                             |![](Resources/doc/barcode/msi+.png)|
+|postnet |[POSTNET](http://en.wikipedia.org/wiki/POSTNET)             |![](Resources/doc/barcode/postnet.png)|
+|planet  |[PLANET](http://en.wikipedia.org/wiki/Postal_Alpha_Numeric_Encoding_Technique)|![](Resources/doc/barcode/planet.png)|
+|c3rms4cc|[RMS4CC](http://en.wikipedia.org/wiki/RM4SCC)    |![](Resources/doc/barcode/c3rms4cc.png)|
+|kix     |[KIX-code](http://nl.wikipedia.org/wiki/KIX-code)|![](Resources/doc/barcode/kix.png)|
+|imb     |[IM barcode](http://en.wikipedia.org/wiki/Intelligent_Mail_barcode)|![](Resources/doc/barcode/imb.png)|
+|codabar |[Codabar](http://en.wikipedia.org/wiki/Codabar)                    |![](Resources/doc/barcode/codabar.png)|
+|code11  |[Code 11](http://en.wikipedia.org/wiki/Code_11)                    |![](Resources/doc/barcode/code11.png)|
+|pharma  |[Pharmacode](http://en.wikipedia.org/wiki/Pharmacode)              |![](Resources/doc/barcode/pharma.png)|
+|pharma2t|Pharmacode Two-Track                                               |![](Resources/doc/barcode/pharma2t.png)|
 
 ## Requirements
 
