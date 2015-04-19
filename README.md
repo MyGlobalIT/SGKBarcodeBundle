@@ -15,7 +15,7 @@ Features:
 3. Twig integration: you can simply use a extensional function of Twig in the template to generate Barcode
 4. Core of this bundle use this laravel project: [dinesh/barcode](https://github.com/dineshrabara/barcode)
 
-![SGKBarcodeBundle](Resources/doc/barcode.png)
+![SGKBarcodeBundle](Resources/doc/README.png)
 
 ## Installation
 
@@ -78,7 +78,7 @@ $options = array(
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
     
-echo $barcode;
+return new Response($barcode);
 ```
 
 * outpout svg
@@ -95,7 +95,7 @@ $options = array(
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
     
-echo $barcode;
+return new Response($barcode);
 ```
 
 * outpout png
@@ -112,7 +112,9 @@ $options = array(
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
     
-echo '<img src="data:image/png;base64,'.$barcode.'" />';
+$barcode = '<img src="data:image/png;base64,'.$barcode.'" />';
+
+return new Response($barcode);
 ```
 > For format png, the generator return the based64 of png file, so we use [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) to display the png in webpage.
 
@@ -173,11 +175,11 @@ Please read [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) to know which
 
 ### 2d barcodes
 
-|type      |Name                                                   |
-|:--------:|:-----------------------------------------------------:|
-|qrcode    |[QR code](http://en.wikipedia.org/wiki/QR_code)        |
-|pdf417    |[PDF417](http://en.wikipedia.org/wiki/PDF417)          |
-|datamatrix|[Data Matrix](http://en.wikipedia.org/wiki/Data_Matrix)|
+|type      |Name                                                   |Example|
+|:--------:|:-----------------------------------------------------:|:-----:|
+|qrcode    |[QR code](http://en.wikipedia.org/wiki/QR_code)        |![](Resources/doc/barcode/qrcode.png)|
+|pdf417    |[PDF417](http://en.wikipedia.org/wiki/PDF417)          |![](Resources/doc/barcode/pdf417.png)|
+|datamatrix|[Data Matrix](http://en.wikipedia.org/wiki/Data_Matrix)|![](Resources/doc/barcode/datamatrix.png)|
 
 ### 1d barcodes
 

@@ -15,7 +15,7 @@ SGKBarcodeBundle 是一个用于生成条形码和二维码的 Symfony2 Bundle�
 3. 集成 Twig：你可以方便的使用一个 Twig 扩展函数，直接在模板中进行调用来显示条形码和二维码
 4. 这个 Bundle 移植于这个 Laravel 项目：[dinesh/barcode](https://github.com/dineshrabara/barcode)
 
-![SGKBarcodeBundle](barcode.png)
+![SGKBarcodeBundle](README.png)
 
 ## Installation
 
@@ -78,7 +78,7 @@ $options = array(
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
     
-echo $barcode;
+return new Response($barcode);
 ```
 
 * 输出 svg
@@ -95,7 +95,7 @@ $options = array(
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
     
-echo $barcode;
+return new Response($barcode);
 ```
 
 * 输出 png
@@ -112,7 +112,9 @@ $options = array(
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
     
-echo '<img src="data:image/png;base64,'.$barcode.'" />';
+$barcode = '<img src="data:image/png;base64,'.$barcode.'" />';
+
+return new Response($barcode);
 ```
 > 对于 png 格式，生成器返回的是 png 图片的 based64 数据，所以需要利用 [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) 来将其内嵌并显示到网页上。
 
