@@ -208,7 +208,7 @@ Please read [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) to know which
 |msi+    |MSI CHECK_DIGIT                                             |![](Resources/doc/barcode/msi+.png)|
 |postnet |[POSTNET](http://en.wikipedia.org/wiki/POSTNET)             |![](Resources/doc/barcode/postnet.png)|
 |planet  |[PLANET](http://en.wikipedia.org/wiki/Postal_Alpha_Numeric_Encoding_Technique)|![](Resources/doc/barcode/planet.png)|
-|c3rms4cc|[RMS4CC](http://en.wikipedia.org/wiki/RM4SCC)    |![](Resources/doc/barcode/c3rms4cc.png)|
+|rms4cc|[RMS4CC](http://en.wikipedia.org/wiki/RM4SCC)    |![](Resources/doc/barcode/rms4cc.png)|
 |kix     |[KIX-code](http://nl.wikipedia.org/wiki/KIX-code)|![](Resources/doc/barcode/kix.png)|
 |imb     |[IM barcode](http://en.wikipedia.org/wiki/Intelligent_Mail_barcode)|![](Resources/doc/barcode/imb.png)|
 |codabar |[Codabar](http://en.wikipedia.org/wiki/Codabar)                    |![](Resources/doc/barcode/codabar.png)|
