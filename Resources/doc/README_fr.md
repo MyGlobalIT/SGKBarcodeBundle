@@ -6,14 +6,14 @@
 [![License](https://poser.pugx.org/sgk/barcode-bundle/license.svg)](https://packagist.org/packages/sgk/barcode-bundle)
 
 SGKBarcodeBundle est un Symfony2 Bundle pour l’objet de générer tous les types de code-barres !
-Ce README document ont aussi une version Anglaise ([Français]( https://github.com/shangguokan/SGKBarcodeBundle)) et une version Chinoise ([中文]( README_zh-CN.md)).
+Ce README document ont aussi une version Anglaise ([English]( https://github.com/shangguokan/SGKBarcodeBundle)) et une version Chinoise ([中文]( README_zh-CN.md)).
 
 Caractéristiques:
 
 1. Capable de générer 3 types de codes-barres bidimensionnels (2D) et 30 types de codes-barres unidimensionnels (1D)
 2. Trois formats de sortie : HTML, PNG and SVG canvas
 3. Twig intégration: vous pouvez directement utiliser une Twig fonction dans le Template pour générer les codes-barres
-4. Ce Bundle est un Portage depuis le Laravel project: [dinesh/barcode](https://github.com/dineshrabara/barcode)
+4. Ce Bundle est un portage depuis le Laravel project: [dinesh/barcode](https://github.com/dineshrabara/barcode)
 
 ![SGKBarcodeBundle](Resources/doc/README.png)
 
@@ -54,7 +54,7 @@ Vous avez 5 paramètres (options) à choisir pour la génération d’un code-ba
 |option|type       |required|allowed values|description          |
 |:----:|:---------:|:------:|:------------:|:-------------------:|
 |code  |string     |required|              |what you want encoded|
-|type  |string     |required|[Supported Types](#supported-barcode-types)|type of barcode|
+|type  |string     |required|[Supported Types](#type-de-code-barres-disponible)|type of barcode|
 |format|string     |required|html, svg, png|output format|
 |width |**integer**|optional|              |**width of unit**|
 |height|**integer**|optional|              |**height of unit**|
@@ -65,7 +65,7 @@ Vous avez 5 paramètres (options) à choisir pour la génération d’un code-ba
 
 ## Utilisation par service
   
-The bundle registers one service: ``sgk_barcode.generator`` which will allows you to generate barcode:
+Ce bundle crée un service ``sgk_barcode.generator``  dans le Conteneur, cela vous permettez de l’utiliser pour générer le code-barres d’une façon très simple.
 
 * outpout html
 ```php
@@ -120,9 +120,9 @@ return new Response($barcode);
 
 ## Utilisation dans le Twig Template
 
-This bundle extend one function of Twig ``barcode`` which you can simply use it to generate barcode in the twig template.
+Ce bundle crée une fonction de Twig ``barcode`` que vous pouvez l’utiliser directement dans le Twig Template.
 
-``barcode`` use the same options, only different thing is your need pass a [Twig array](http://twig.sensiolabs.org/doc/templates.html#literals) (it looks really like Json, but it isn't) in the function.
+``barcode`` prend les mêmes paramètres (options), le seul chose différente est que vous besoin de passer un [Twig tableau](http://twig.sensiolabs.org/doc/templates.html#literals) (qui vraiment ressemble à Json, mais il n’est pas) dans la fonction.
 
 * display html
 ```twig
@@ -141,9 +141,9 @@ This bundle extend one function of Twig ``barcode`` which you can simply use it 
 " />
 ```
 
-## Save Barcode in file
+## Enregistrer les codes-barres dans les fichiers
 
-As you can see, the Bundle save nothing on the file system, But if you want to keep the barcode, No problem!
+Comme vous avez vu, ce Bundle n’enregistre rien sur vos ordinateurs, mais si vous voulez les enregistrer, il n’y aura pas de problème !
 
 * save as html
 ```php
@@ -169,9 +169,9 @@ $fileName = 'sample.png';
 file_put_contents($savePath.$fileName, base64_decode($barcode));
 ```
 
-## Supported Barcode Types
+## Type de code-barres disponible
 
-Please read [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) to know which type you should choice. 
+Jetez un coup d'œil à [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) pour savoir quel type vous devez choisir. 
 
 ### 2d barcodes
 
@@ -216,16 +216,16 @@ Please read [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) to know which
 |pharma  |[Pharmacode](http://en.wikipedia.org/wiki/Pharmacode)              |![](Resources/doc/barcode/pharma.png)|
 |pharma2t|Pharmacode Two-Track                                               |![](Resources/doc/barcode/pharma2t.png)|
 
-## Requirements
+## Dépendance
 
-If there is some problem of requirements, make sure you have install these two extensions of PHP (check in your phpinfo()).
+Si vous avez rencontré quelque problème de dépendance, vérifierez que vous avez bien installé les deux extensions de PHP (dans phpinfo()).
 
-- Barcodes requires [ImageMagick](http://php.net/manual/en/book.imagick.php) to create PNGs in PHP 5.3.
-- Barcodes requires [PHP bcmath](http://php.net/manual/en/book.bc.php) extension for Intelligent Mail barcodes
+- [ImageMagick](http://php.net/manual/en/book.imagick.php) pour créer les PNGs sous PHP 5.3.
+- [PHP bcmath](http://php.net/manual/en/book.bc.php) extension pour générer le format Intelligent Mail barcodes (IMB)
 
 ## Tests
 
-To execute unit tests:
+Exécuter les tests unitaires:
 ```sh
 $ phpunit --coverage-text
 ```
