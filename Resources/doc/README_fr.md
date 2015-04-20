@@ -6,7 +6,7 @@
 [![License](https://poser.pugx.org/sgk/barcode-bundle/license.svg)](https://packagist.org/packages/sgk/barcode-bundle)
 
 SGKBarcodeBundle est un Symfony2 Bundle pour l’objet de générer tous les types de code-barres !
-Ce README document ont aussi une version Anglaise ([English]( https://github.com/shangguokan/SGKBarcodeBundle)) et une version Chinoise ([中文]( README_zh-CN.md)).
+Ce document README ont aussi une version Anglaise ([English]( https://github.com/shangguokan/SGKBarcodeBundle)) et une version Chinoise ([中文]( README_zh-CN.md)).
 
 Caractéristiques:
 
@@ -24,7 +24,7 @@ Ajoutez SGKBarcodeBundle via exécuter le command:
 $ php composer.phar require sgk/barcode-bundle:dev-master
 ```
 
-Ou ajoutez la dépendance de  SGKBarcodeBundle à votre fichier ``composer.json``, puis Mettez à jour les bibliothèques vendor : ``php composer.phar update``
+Ou ajoutez la dépendance de  SGKBarcodeBundle à votre fichier ``composer.json``, puis mettez à jour les bibliothèques vendor : ``php composer.phar update``
 ```json
 "require": {
         "sgk/barcode-bundle": "dev-master"
@@ -49,16 +49,16 @@ public function registerBundles()
 
 ## Paramètres de génération
 
-Vous avez 5 paramètres (options) à choisir pour la génération d’un code-barres
+Vous avez 5 paramètres (options) à choisir pour la génération d’un code-barres.
 
 |option|type       |requis|valeur possible|description          |
 |:----:|:---------:|:------:|:------------:|:-------------------:|
 |code  |string     |obligatoire|              |ce que vous voulez encoder|
-|type  |string     |obligatoire|[Supported Types](#type-de-code-barres-disponible)|type de code-barre|
+|type  |string     |obligatoire|[Types disponible](#type-de-code-barres-disponible)|type de code-barre|
 |format|string     |obligatoire|html, svg, png|format de sortie|
-|width |**integer**|optionnel|              |**width de unit**|
-|height|**integer**|optionnel|              |**height de unit**|
-|color |string for html, svg / array for png|optionnel|[HTML Color Names](http://www.w3schools.com/html/html_colornames.asp) / array(R, G, B)|couleur|
+|width |**integer**|optionnel|              |**largeur de unit**|
+|height|**integer**|optionnel|              |**hauteur de unit**|
+|color |string (html, svg) / array (png)|optionnel|[HTML Color Names](http://www.w3schools.com/html/html_colornames.asp) / array(R, G, B)|couleur|
 
 > Valeur par défaut de width et height pour les codes-barres 2D sont 5, 5, pour les codes-barres 1D sont 2, 30.
 > Valeur par défaut de couleur pour les fomarts html et svg est black, pour png est array(0, 0, 0)
@@ -111,12 +111,10 @@ $options = array(
 
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
-    
-$barcode = '<img src="data:image/png;base64,'.$barcode.'" />';
 
-return new Response($barcode);
+return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 ```
-> For format png, the generator return the based64 of png file, so we use [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) to display the png in webpage.
+> Si vous choisissez le format png, le générateur retournera le donnée based64 de png fichier, donc on prend [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) pour afficher le png image sur webpage.
 
 ## Utilisation dans le Twig Template
 

@@ -111,10 +111,8 @@ $options = array(
 
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
-    
-$barcode = '<img src="data:image/png;base64,'.$barcode.'" />';
 
-return new Response($barcode);
+return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 ```
 > 对于 png 格式，生成器返回的是 png 图片的 based64 数据，所以需要利用 [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) 来将其内嵌并显示到网页上。
 

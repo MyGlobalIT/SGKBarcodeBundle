@@ -10,7 +10,7 @@ This README is also available in French ([Français](Resources/doc/README_fr.md)
 
 Features:
 
-1. Support 3 two-dimensional and 30 one-dimensional Barcode types
+1. Support 3 two-dimensional (2D) and 30 one-dimensional (1D) Barcode types
 2. Three output formats: HTML, PNG and SVG canvas
 3. Twig integration: you can simply use a extensional function of Twig in the template to generate Barcode
 4. Core of this bundle use this laravel project: [dinesh/barcode](https://github.com/dineshrabara/barcode)
@@ -24,7 +24,7 @@ Add SGKBarcodeBundle by running the command:
 $ php composer.phar require sgk/barcode-bundle:dev-master
 ```
 
-Or, Add SGKBarcodeBundle to your ``composer.json``, then execute ``php composer.phar update``
+Or, add SGKBarcodeBundle to your ``composer.json``, then execute ``php composer.phar update``
 ```json
 "require": {
         "sgk/barcode-bundle": "dev-master"
@@ -49,7 +49,7 @@ public function registerBundles()
 
 ## Generate options
 
-To generate a barcode, you have 5 options can be configured.
+To generate one barcode, you have 5 options can be configured.
 
 |option|type       |required|allowed values|description          |
 |:----:|:---------:|:------:|:------------:|:-------------------:|
@@ -58,9 +58,9 @@ To generate a barcode, you have 5 options can be configured.
 |format|string     |required|html, svg, png|output format|
 |width |**integer**|optional|              |**width of unit**|
 |height|**integer**|optional|              |**height of unit**|
-|color |string for html, svg / array for png|optional|[HTML Color Names](http://www.w3schools.com/html/html_colornames.asp) / array(R, G, B)|Barcode color|
+|color |string for html, svg / array for png|optional|[HTML Color Names](http://www.w3schools.com/html/html_colornames.asp) / array(R, G, B)|barcode color|
 
-> Default width and height for two-dimensional are 5, 5, for one-dimensional are 2, 30.
+> Default width and height for 2D barcode are 5, 5, for 1D are 2, 30.
 > Default color for html, svg is black, for png is array(0, 0, 0)
 
 ## Usage by service
@@ -111,16 +111,14 @@ $options = array(
 
 $barcode =
     $this->get('sgk_barcode.generator')->generate($options);
-    
-$barcode = '<img src="data:image/png;base64,'.$barcode.'" />';
 
-return new Response($barcode);
+return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 ```
 > For format png, the generator return the based64 of png file, so we use [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) to display the png in webpage.
 
 ## Usage in Twig template
 
-This bundle extend one function of Twig ``barcode`` which you can simply use it to generate barcode in the twig template.
+This bundle extend one function of Twig: ``barcode`` which you can simply use it to generate barcode in the twig template.
 
 ``barcode`` use the same options, only different thing is your need pass a [Twig array](http://twig.sensiolabs.org/doc/templates.html#literals) (it looks really like Json, but it isn't) in the function.
 
