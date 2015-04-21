@@ -1,9 +1,7 @@
 # SGKBarcodeBundle
 
 [![Build Status](https://travis-ci.org/shangguokan/SGKBarcodeBundle.svg)](https://travis-ci.org/shangguokan/SGKBarcodeBundle)
-[![Latest Stable Version](https://poser.pugx.org/sgk/barcode-bundle/v/stable.svg)](https://packagist.org/packages/sgk/barcode-bundle)
-[![Total Downloads](https://poser.pugx.org/sgk/barcode-bundle/downloads.svg)](https://packagist.org/packages/sgk/barcode-bundle)
-[![License](https://poser.pugx.org/sgk/barcode-bundle/license.svg)](https://packagist.org/packages/sgk/barcode-bundle)
+[![Latest Stable Version](https://poser.pugx.org/sgk/barcode-bundle/v/stable)](https://packagist.org/packages/sgk/barcode-bundle) [![Total Downloads](https://poser.pugx.org/sgk/barcode-bundle/downloads)](https://packagist.org/packages/sgk/barcode-bundle) [![Latest Unstable Version](https://poser.pugx.org/sgk/barcode-bundle/v/unstable)](https://packagist.org/packages/sgk/barcode-bundle) [![License](https://poser.pugx.org/sgk/barcode-bundle/license)](https://packagist.org/packages/sgk/barcode-bundle)
 
 SGKBarcodeBundle 是一个用于生成条形码和二维码的 Symfony2 Bundle。
 这份 README 还有英语版（[English](https://github.com/shangguokan/SGKBarcodeBundle)）和法语版（[Français](README_fr.md)）。
