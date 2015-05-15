@@ -112,7 +112,7 @@ $barcode =
 
 return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 ```
-> Si vous choisissez le format png, le générateur retournera le donnée based64 de png fichier, donc on prend [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) pour afficher le png image sur webpage.
+> Si vous choisissez le format png, le générateur retournera le donnée based64 de png fichier, vous pouvez obtenir le donnée original via ``base64_decode($barcode)``. Ici on prend [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) pour directement afficher le png image sur webpage.
 
 ## Utilisation dans le Twig Template
 
@@ -216,7 +216,7 @@ Jetez un coup d'œil à [Wikipedia page](http://en.wikipedia.org/wiki/Barcode) p
 
 Si vous avez rencontré quelque problème de dépendance, vérifierez que vous avez bien installé les deux extensions de PHP (dans phpinfo()).
 
-- [ImageMagick](http://php.net/manual/en/book.imagick.php) pour créer les PNGs sous PHP 5.3.
+- [GD](http://php.net/manual/en/book.image.php) et [ImageMagick](http://php.net/manual/en/book.imagick.php) pour créer les PNGs sous PHP 5.3.
 - [PHP bcmath](http://php.net/manual/en/book.bc.php) extension pour générer le format Intelligent Mail barcodes (IMB)
 
 ## Tests

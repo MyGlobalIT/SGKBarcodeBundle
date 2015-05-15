@@ -112,7 +112,7 @@ $barcode =
 
 return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 ```
-> 对于 png 格式，生成器返回的是 png 图片的 based64 数据，所以需要利用 [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) 来将其内嵌并显示到网页上。
+> 对于 png 格式，生成器返回的是 png 图片的 based64 数据，你可以通过``base64_decode($barcode)``来获得原始数据。在这里我们利用 [Data URI scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) 来将base64数据直接内嵌并显示到网页上。
 
 ## 用例：在 Twig 模板中使用
 
@@ -216,7 +216,7 @@ file_put_contents($savePath.$fileName, base64_decode($barcode));
 
 如果你遇到了依赖问题，请检查你的 phpinfo()，查看你是否安装了以下两个 PHP 扩展。（一般情况下都是已默认安装的）
 
-- 需要 [ImageMagick](http://php.net/manual/en/book.imagick.php) 来生成 PNGs in PHP 5.3。
+- 需要 [GD](http://php.net/manual/en/book.image.php) 和 [ImageMagick](http://php.net/manual/en/book.imagick.php) 来生成 PNGs in PHP 5.3。
 - 需要 [PHP bcmath](http://php.net/manual/en/book.bc.php) 来生成 Intelligent Mail barcodes（IMB格式）。
 
 ## 测试
