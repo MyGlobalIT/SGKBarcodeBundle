@@ -137,7 +137,7 @@ Ce bundle crée une fonction de Twig ``barcode`` que vous pouvez l’utiliser di
 " />
 ```
 
-## Usage sans service
+## Utilisation sans service
 
 ```php
 use SGK\BarcodeBundle\Generator\Generator;
