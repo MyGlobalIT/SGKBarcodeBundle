@@ -141,7 +141,7 @@ Ce bundle crée une fonction de Twig ``barcode`` que vous pouvez l’utiliser di
 
 ```php
 use SGK\BarcodeBundle\Generator\Generator;
-...
+//...
 $options = array(
     'code'   => 'string to encode',
     'type'   => 'qrcode',

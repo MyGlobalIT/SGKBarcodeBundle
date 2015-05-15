@@ -141,7 +141,7 @@ return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 
 ```php
 use SGK\BarcodeBundle\Generator\Generator;
-...
+//...
 $options = array(
     'code'   => 'string to encode',
     'type'   => 'qrcode',
