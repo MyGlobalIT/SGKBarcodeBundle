@@ -137,6 +137,23 @@ Ce bundle crée une fonction de Twig ``barcode`` que vous pouvez l’utiliser di
 " />
 ```
 
+## Usage sans service
+
+```php
+use SGK\BarcodeBundle\Generator\Generator;
+...
+$options = array(
+    'code'   => 'string to encode',
+    'type'   => 'qrcode',
+    'format' => 'html',
+);
+
+$generator = new Generator();
+$barcode = $generator->generate($options);
+
+return new Response($barcode);
+```
+
 ## Enregistrer les codes-barres dans les fichiers
 
 Comme vous avez vu, ce Bundle n’enregistre rien sur vos ordinateurs, mais si vous voulez les enregistrer, il n’y aura pas de problème !

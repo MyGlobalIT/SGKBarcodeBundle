@@ -137,6 +137,23 @@ return new Response('<img src="data:image/png;base64,'.$barcode.'" />');
 " />
 ```
 
+## 用例：不通过 service 使用
+
+```php
+use SGK\BarcodeBundle\Generator\Generator;
+...
+$options = array(
+    'code'   => 'string to encode',
+    'type'   => 'qrcode',
+    'format' => 'html',
+);
+
+$generator = new Generator();
+$barcode = $generator->generate($options);
+
+return new Response($barcode);
+```
+
 ## 将生成的条码存储到文件
 
 你已经看到，这个 Bundle 不会在文件系统上存储任何文件，但是如果你想把条码存到文件，也是没有问题的：

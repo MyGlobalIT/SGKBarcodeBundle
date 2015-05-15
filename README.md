@@ -137,6 +137,23 @@ This bundle extend one function of Twig: ``barcode`` which you can simply use it
 " />
 ```
 
+## Usage without service
+
+```php
+use SGK\BarcodeBundle\Generator\Generator;
+...
+$options = array(
+    'code'   => 'string to encode',
+    'type'   => 'qrcode',
+    'format' => 'html',
+);
+
+$generator = new Generator();
+$barcode = $generator->generate($options);
+
+return new Response($barcode);
+```
+
 ## Save Barcode in file
 
 As you can see, the Bundle save nothing on the file system, But if you want to keep the barcode, No problem!
