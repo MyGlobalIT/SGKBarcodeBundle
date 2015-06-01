@@ -90,15 +90,15 @@ class Generator
     /**
      * Configure generate options
      *
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    protected function configureOptions(OptionsResolverInterface $resolver)
+    protected function configureOptions(OptionsResolver $resolver)
     {
         $resolver
             ->setRequired(array(
                 'code', 'type', 'format',
             ))
-            ->setOptional(array(
+            ->setDefined(array(
                 'width', 'height', 'color',
             ))
             ->setDefaults(array(
@@ -111,21 +111,32 @@ class Generator
                 'color' => function (Options $options) {
                     return $options['format'] == 'png' ? array(0, 0, 0) : 'black';
                 },
-            ))
-            ->setAllowedTypes(array(
+            ));
+
+            $allowedTypes = array(
                 'code'   => array('string'),
                 'type'   => array('string'),
                 'format' => array('string'),
                 'width'  => array('integer'),
                 'height' => array('integer'),
                 'color'  => array('string', 'array'),
-            ))
-            ->setAllowedValues(array(
+            );
+
+            foreach ($allowedTypes as $typeName => $typeValue) {
+                $resolver->setAllowedTypes($typeName, $typeValue);
+            }
+
+            $allowedValues = array(
                 'type'   => array_merge(
                     Type::$oneDimensionalBarcodeType,
                     Type::$twoDimensionalBarcodeType
                 ),
                 'format' => array('html', 'png', 'svg'),
-            ));
+            );
+
+            foreach ($allowedValues as $valueName => $value) {
+                $resolver->setAllowedValues($valueName, $value);
+            }
+
     }
 }
