@@ -21,6 +21,7 @@ Ajoutez SGKBarcodeBundle via exécuter le command:
 ```sh
 // Symfony version < 2.7
 $ php composer.phar require sgk/barcode-bundle:~1.0
+
 // Symfony version >= 2.7
 $ php composer.phar require sgk/barcode-bundle:~2.0
 ```
@@ -31,6 +32,7 @@ Ou ajoutez la dépendance de  SGKBarcodeBundle à votre fichier ``composer.json`
 "require": {
         "sgk/barcode-bundle": "~1.0"
     }
+
 // Symfony version >= 2.7
 "require": {
         "sgk/barcode-bundle": "~2.0"

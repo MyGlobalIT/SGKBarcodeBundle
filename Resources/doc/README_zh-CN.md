@@ -21,6 +21,7 @@ SGKBarcodeBundle 是一个用于生成条形码和二维码的 Symfony2 Bundle�
 ```sh
 // Symfony version < 2.7
 $ php composer.phar require sgk/barcode-bundle:~1.0
+
 // Symfony version >= 2.7
 $ php composer.phar require sgk/barcode-bundle:~2.0
 ```
@@ -31,6 +32,7 @@ $ php composer.phar require sgk/barcode-bundle:~2.0
 "require": {
         "sgk/barcode-bundle": "~1.0"
     }
+
 // Symfony version >= 2.7
 "require": {
         "sgk/barcode-bundle": "~2.0"
