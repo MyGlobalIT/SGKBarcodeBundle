@@ -19,13 +19,21 @@ SGKBarcodeBundle 是一个用于生成条形码和二维码的 Symfony2 Bundle�
 
 执行这条指令来安装 SGKBarcodeBundle：
 ```sh
-$ php composer.phar require sgk/barcode-bundle:dev-master
+// Symfony version < 2.7
+$ php composer.phar require sgk/barcode-bundle:~1.0
+// Symfony version >= 2.7
+$ php composer.phar require sgk/barcode-bundle:~2.0
 ```
 
 或者，把 SGKBarcodeBundle 依赖添加到你的 ``composer.json`` 中，然后执行 ``php composer.phar update`` ：
 ```json
+// Symfony version < 2.7
 "require": {
-        "sgk/barcode-bundle": "dev-master"
+        "sgk/barcode-bundle": "~1.0"
+    }
+// Symfony version >= 2.7
+"require": {
+        "sgk/barcode-bundle": "~2.0"
     }
 ```
 
