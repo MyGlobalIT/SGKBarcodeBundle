@@ -2,6 +2,7 @@
 
 namespace SGK\BarcodeBundle\Generator;
 
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
 
@@ -89,15 +90,15 @@ class Generator
     /**
      * Configure generate options
      *
-     * @param OptionsResolver $resolver
+     * @param OptionsResolverInterface $resolver
      */
-    protected function configureOptions(OptionsResolver $resolver)
+    protected function configureOptions(OptionsResolverInterface $resolver)
     {
         $resolver
             ->setRequired(array(
                 'code', 'type', 'format',
             ))
-            ->setDefined(array(
+            ->setOptional(array(
                 'width', 'height', 'color',
             ))
             ->setDefaults(array(
@@ -110,32 +111,21 @@ class Generator
                 'color' => function (Options $options) {
                     return $options['format'] == 'png' ? array(0, 0, 0) : 'black';
                 },
-            ));
-
-            $allowedTypes = array(
+            ))
+            ->setAllowedTypes(array(
                 'code'   => array('string'),
                 'type'   => array('string'),
                 'format' => array('string'),
                 'width'  => array('integer'),
                 'height' => array('integer'),
                 'color'  => array('string', 'array'),
-            );
-
-            foreach ($allowedTypes as $typeName => $typeValue) {
-                $resolver->setAllowedTypes($typeName, $typeValue);
-            }
-
-            $allowedValues = array(
+            ))
+            ->setAllowedValues(array(
                 'type'   => array_merge(
                     Type::$oneDimensionalBarcodeType,
                     Type::$twoDimensionalBarcodeType
                 ),
                 'format' => array('html', 'png', 'svg'),
-            );
-
-            foreach ($allowedValues as $valueName => $value) {
-                $resolver->setAllowedValues($valueName, $value);
-            }
-
+            ));
     }
 }
